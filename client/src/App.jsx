@@ -1,11 +1,26 @@
 /** @format */
 
 import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Login from "./components/Login";
+import Register from "./components/Register";
+
+/** Routes **/
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Login />,
+    },
+    {
+        path: "/register",
+        element: <Register />,
+    },
+]);
 
 export default function App() {
     return (
-        <h1 className="text-3xl font-bold underline">
-            React Authentication App
-        </h1>
+        <main>
+            <RouterProvider router={router}></RouterProvider>
+        </main>
     );
 }
