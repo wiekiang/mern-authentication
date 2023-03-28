@@ -16,6 +16,17 @@ export async function passwordValidate(values) {
     return errors;
 }
 
+/** validate reset password **/
+export async function resetPasswordValidate(values) {
+    const errors = passwordVerify({}, values);
+
+    if (values.password !== values.confirm_pwd) {
+        errors.exist = toast.error("Password does not match...!");
+    }
+
+    return errors;
+}
+
 /** verify password **/
 function passwordVerify(error = {}, values) {
     const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;

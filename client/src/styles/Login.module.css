@@ -15,7 +15,7 @@
 }
 
 .textbox {
-    @apply border-0 w-full px-5 py-4 mt-5 rounded-lg shadow-sm text-lg;
+    @apply border-0 w-full px-5 py-4 rounded-lg shadow-sm text-lg;
     @apply focus:outline-none;
 }
 

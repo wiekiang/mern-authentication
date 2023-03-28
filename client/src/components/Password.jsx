@@ -32,7 +32,7 @@ export default function Password() {
                         <h4 className="text-3xl py-4">Input Your Password</h4>
                     </div>
                     <form className="py-1" onSubmit={formik.handleSubmit}>
-                        <div className="profile flex justify-center py-4">
+                        <div className="profile flex justify-center py-4 mb-5">
                             <img
                                 className={styles.profile__img}
                                 src={avatar}
@@ -54,8 +54,8 @@ export default function Password() {
 
                         <div className="text-center py-4 mt-4">
                             <span className="text-gray-500 text-sm">
-                                Forget your password?{" "}
-                                <Link to="/reset" className="text-red-500">
+                                Forgot your password?{" "}
+                                <Link to="/recovery" className="text-red-500">
                                     Reset Now
                                 </Link>
                             </span>
