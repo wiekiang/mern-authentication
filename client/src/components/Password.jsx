@@ -4,17 +4,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { useFormik } from "formik";
-import { usernameValidate } from "../helper/validate";
+import { passwordValidate } from "../helper/validate";
 
 import avatar from "../assets/profile.png";
 import styles from "../styles/Login.module.css";
 
-export default function Login() {
+export default function Password() {
     const formik = useFormik({
         initialValues: {
-            username: "",
+            password: "",
         },
-        validate: usernameValidate,
+        validate: passwordValidate,
         validateOnBlur: false,
         validateOnChange: false,
         onSubmit: async (values) => {
@@ -29,7 +29,7 @@ export default function Login() {
             <div className="flex justify-center items-center h-screen">
                 <div className={styles.glass} style={{ width: "40%" }}>
                     <div className="title flex flex-col items-center">
-                        <h4 className="text-3xl py-4">Welcome</h4>
+                        <h4 className="text-3xl py-4">Input Your Password</h4>
                     </div>
                     <form className="py-1" onSubmit={formik.handleSubmit}>
                         <div className="profile flex justify-center py-4">
@@ -42,21 +42,21 @@ export default function Login() {
 
                         <div className="textbox flex flex-col items-center gap-4">
                             <input
-                                {...formik.getFieldProps("username")}
+                                {...formik.getFieldProps("password")}
                                 className={styles.textbox}
-                                type="text"
-                                placeholder="Email"
+                                type="password"
+                                placeholder="Password"
                             />
                             <button className={styles.btn} type="submit">
-                                Submit
+                                Login
                             </button>
                         </div>
 
                         <div className="text-center py-4 mt-4">
                             <span className="text-gray-500 text-sm">
-                                Do not have an account?{" "}
-                                <Link to="/register" className="text-red-500">
-                                    Register Now
+                                Forget your password?{" "}
+                                <Link to="/reset" className="text-red-500">
+                                    Reset Now
                                 </Link>
                             </span>
                         </div>
